@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { presenceActionAddPerson } from '../../store/actions/presence.action';
+import { itemActionAdd } from '../../store/reducers/item.slice.js';
 
 const PersonPresenceRead = () => {
   // Lecture du store
@@ -26,6 +27,7 @@ const PersonPresenceEvent = () => {
   };
   const handleAddDella = () => {
     dispatch(presenceActionAddPerson({firstname: 'Della', lastname: 'Duck'}));
+    dispatch(itemActionAdd({ name: 'Test', price: 42 }));
   };
 
   return (
